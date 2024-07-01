@@ -1,7 +1,10 @@
 import express from "express";
+import * as feedController from "../controllers/feed";
 
 const router: express.Router = express.Router();
 
-router.get("/posts");
+router.get("/posts", feedController.getPosts);
 
-module.exports = router;
+router.post("/posts", feedController.createPost);
+
+export default router;
